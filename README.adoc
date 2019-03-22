@@ -1,2 +1,2 @@
-# honey-example
+= honey-example
 Beispiel für eine Webkomponente
