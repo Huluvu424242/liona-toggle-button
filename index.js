@@ -54,4 +54,7 @@ class ExpandableBox extends HTMLElement {
 
 }
 
+window.customElements.define('copy-paste', ExpandableBox);
+
+export default ExpandableBox;
 
