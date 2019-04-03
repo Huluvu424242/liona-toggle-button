@@ -1,8 +1,8 @@
 class ExpandableBox extends HTMLElement {
     constructor() {
         super()
-        customElements.define('expandable-box', ExpandableBox)
-        var shadowRoot = this.attachShadow({ mode: 'open' })
+        console.log('constructor');
+        var shadowRoot = this.attachShadow({ mode: 'open' });
         shadowRoot.innerHTML =
             `<style>
             p {
@@ -15,13 +15,13 @@ class ExpandableBox extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log("custom element is on the page!")
-        document.body.appendChild(document.createElement("expandable-box"))
+        console.log('custom element is on the page!');
+//        document.body.appendChild(document.createElement('honey-example'));
     }
 
     disconnectedCallback() {
-        console.log("element has been removed")
-        document.querySelector("expandable-box").remove()
+        console.log('element has been removed');
+        document.querySelector("honey-example").remove();
     }
 
     attributeChangedCallback(name, oldval, newval) {
@@ -31,12 +31,12 @@ class ExpandableBox extends HTMLElement {
 
 
     static get observedAttributes() {
-        return ['expanded']
+        return ['expanded'];
     }
 
 
     get expanded() {
-        return this.hasAttribute('expanded')
+        return this.hasAttribute('expanded');
     }
 
     // the second argument for setAttribute is mandatory, so we’ll use an empty string
@@ -45,7 +45,7 @@ class ExpandableBox extends HTMLElement {
             this.setAttribute('expanded', '');
         }
         else {
-            this.removeAttribute('expanded')
+            this.removeAttribute('expanded');
         }
     }
 
@@ -54,7 +54,7 @@ class ExpandableBox extends HTMLElement {
 
 }
 
-window.customElements.define('copy-paste', ExpandableBox);
+window.customElements.define('honey-example', ExpandableBox);
 
 export default ExpandableBox;
 
