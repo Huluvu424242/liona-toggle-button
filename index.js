@@ -1,4 +1,5 @@
 class ExpandableBox extends HTMLElement {
+
     constructor() {
         super()
         console.log('constructor');
@@ -26,6 +27,9 @@ class ExpandableBox extends HTMLElement {
 
     attributeChangedCallback(name, oldval, newval) {
         console.log(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
+        para : HTMLElement = document.createElement('p');
+        para.innerHTML="toogled";
+        document.body.appendChild(para);
         // do something every time the attribute changes
     }
 
@@ -48,7 +52,6 @@ class ExpandableBox extends HTMLElement {
             this.removeAttribute('expanded');
         }
     }
-
 
 
 
