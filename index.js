@@ -6,25 +6,25 @@ customElements.define('honey-example',
             super()
             console.log('constructor');
 
-            this.addEventListener('click', () => {
+            // Template Inhalte aus HTML Seite ermitteln
+            const template = document.getElementById('my-template');
+            const templateContent = template.content;
+
+            // Template klonen und per Shadow DOM einhängen
+            var shadowRoot = this.attachShadow({ mode: 'open' });
+            shadowRoot.appendChild(templateContent.cloneNode(true));
+
+            // onClick auf Button definieren
+            const button = shadowRoot.getElementById('button1');
+            button.addEventListener('click', () => {
                 this.toggle();
             });
 
-            var shadowRoot = this.attachShadow({ mode: 'open' });
-            shadowRoot.innerHTML =
-                `<style>
-                p {
-                    color: red;
-                }
-                </style>
-                <h2>hello world!</h2>
-                <slot name="content">some default content</slot>
-                <button onclick="this.toggle()">do not click</button>
-                `;
         }
 
         connectedCallback() {
             console.log('custom element is on the page!');
+
          }
 
         disconnectedCallback() {
@@ -34,6 +34,8 @@ customElements.define('honey-example',
 
         attributeChangedCallback(name, oldval, newval) {
             console.log(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
+
+            // neuen Paragraph erzeugen und ans HTML Dokument anhängen
             const para = document.createElement('p');
             para.innerHTML='toogled';
             document.body.appendChild(para);

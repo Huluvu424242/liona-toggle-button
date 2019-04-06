@@ -9,6 +9,17 @@
 </head>
 <body>
 
+<template id="my-template">
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+    <h2>hello world!</h2>
+    <slot name="content">some default content</slot>
+    <button id="button1">do not click</button>
+</template>
+
 <honey-example>
 <p slot="content">click here to add a toggle</p>
 
