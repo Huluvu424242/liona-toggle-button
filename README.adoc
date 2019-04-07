@@ -1,2 +1,9 @@
 = honey-toggle-button
 Beispiel für eine Webkomponente
+
+= Quellen im Neuland
+* https://blog.risingstack.com/node-hero-node-js-project-structure-tutorial/
+* https://developer.mozilla.org/en-US/docs/Web/Web_Components
+* https://github.com/mdn/web-components-examples
+* https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
+* https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
