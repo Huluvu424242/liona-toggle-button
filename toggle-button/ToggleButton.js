@@ -44,38 +44,33 @@ customElements.define('honey-toggle-button',
 
 
         static get observedAttributes() {
-            return ['expanded'];
+            return ['toggeled'];
         }
 
 
-        get expanded() {
-            return this.hasAttribute('expanded');
+        get toggeled() {
+            return this.hasAttribute('toggeled');
         }
 
         // the second argument for setAttribute is mandatory, so we’ll use an empty string
-        set expanded(val) {
+        set toggeled(val) {
             if (val) {
-                this.setAttribute('expanded', '');
+                this.setAttribute('toggeled', '');
             }
             else {
-                this.removeAttribute('expanded');
+                this.removeAttribute('toggeled');
             }
         }
 
         toggle(){
-           if( this.hasAttribute('expanded')){
-               this.removeAttribute('expanded');
+           if( this.hasAttribute('toggeled')){
+               this.removeAttribute('toggeled');
            }else{
-               this.setAttribute('expanded', '');
+               this.setAttribute('toggeled', '');
            }
         }
     }
 );
-
-
-//    export default ToggleButton;
-
-//window.customElements.define('honey-toggle-button', ToggleButton);
 
 
 
