@@ -7,3 +7,5 @@ Beispiel für eine Webkomponente
 * https://github.com/mdn/web-components-examples
 * https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
 * https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
+* https://medium.com/content-uneditable/implementing-single-file-web-components-22adeaa0cd17
+
