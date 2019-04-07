@@ -1,5 +1,5 @@
 {
-  "name": "honey-example",
+  "name": "honey-toggle-button",
   "version": "1.0.0",
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FunThomas424242/honey-example.git"
+    "url": "git+https://github.com/FunThomas424242/honey-toggle-button.git"
   },
   "keywords": [
     "webcomponent"
@@ -16,7 +16,7 @@
   "author": "FunThomas424242 (Thomas Schubert)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FunThomas424242/honey-example/issues"
+    "url": "https://github.com/FunThomas424242/honey-toggle-button/issues"
   },
-  "homepage": "https://github.com/FunThomas424242/honey-example#readme"
+  "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme"
 }

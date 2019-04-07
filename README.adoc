@@ -1,2 +1,2 @@
-= honey-example
+= honey-toggle-button
 Beispiel für eine Webkomponente

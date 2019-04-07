@@ -1,6 +1,6 @@
-customElements.define('honey-example',
+customElements.define('honey-toggle-button',
 
-    class ExpandableBox extends HTMLElement {
+    class ToggleButton extends HTMLElement {
 
         constructor() {
             super()
@@ -29,7 +29,7 @@ customElements.define('honey-example',
 
         disconnectedCallback() {
             console.log('element has been removed');
-            document.querySelector("honey-example").remove();
+            document.querySelector("honey-toggle-button").remove();
         }
 
         attributeChangedCallback(name, oldval, newval) {
@@ -73,9 +73,9 @@ customElements.define('honey-example',
 );
 
 
-//    export default ExpandableBox;
+//    export default ToggleButton;
 
-//window.customElements.define('honey-example', ExpandableBox);
+//window.customElements.define('honey-toggle-button', ToggleButton);
 
 
 
