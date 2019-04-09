@@ -1,3 +1,5 @@
+import mytemplate from '../toggle-button';
+
 customElements.define('honey-toggle-button',
 
     class ToggleButton extends HTMLElement {
@@ -71,6 +73,8 @@ customElements.define('honey-toggle-button',
         }
     }
 );
+
+module.export =  {ToggleButton};
 
 
 
