@@ -4,7 +4,8 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "serve": "static-server"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/FunThomas424242/honey-toggle-button/issues"
   },
-  "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme"
+  "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
+  "devDependencies": {
+    "static-server": "*"
+  }
 }

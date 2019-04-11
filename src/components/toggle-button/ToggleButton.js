@@ -1,3 +1,10 @@
+const template = document.createElement('template');
+template.innerHTML = `
+     <h2>hello world!</h2>
+     <slot name="content">some default content</slot>
+     <button id="button1">do not click</button>
+`;
+
 customElements.define('honey-toggle-button',
 
     class ToggleButton extends HTMLElement {
@@ -6,25 +13,26 @@ customElements.define('honey-toggle-button',
             super()
             console.log('constructor');
 
-            // Template Inhalte aus HTML Seite ermitteln
-            const template = document.getElementById('my-template');
-            const templateContent = template.content;
+            // for init attribut defaults
+            // e.g. this.src = '';
 
-            // Template klonen und per Shadow DOM einhängen
-            var shadowRoot = this.attachShadow({ mode: 'open' });
-            shadowRoot.appendChild(templateContent.cloneNode(true));
-
-            // onClick auf Button definieren
-            const button = shadowRoot.getElementById('button1');
-            button.addEventListener('click', () => {
-                this.toggle();
-            });
 
         }
 
         connectedCallback() {
             console.log('custom element is on the page!');
 
+            if (!this.shadowRoot) {
+              console.log('creating shadow dom');
+              this.attachShadow({mode: 'open'});
+              this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+              // onClick auf Button definieren
+              this.button = this.shadowRoot.getElementById('button1');
+              this.button.addEventListener('click', () => {
+                  this.toggle();
+              });
+            }
          }
 
         disconnectedCallback() {
@@ -72,10 +80,7 @@ customElements.define('honey-toggle-button',
     }
 );
 
-
 //    export default ToggleButton;
-
-//window.customElements.define('honey-toggle-button', ToggleButton);
 
 
 
