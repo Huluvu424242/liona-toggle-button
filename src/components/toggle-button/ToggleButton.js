@@ -1,8 +1,6 @@
 const template = document.createElement('template');
 template.innerHTML = `
-     <h2>hello world!</h2>
-     <slot name="content">some default content</slot>
-     <button id="button1">do not click</button>
+     <button id="toggleButton">loading...</button>
 `;
 
 customElements.define('honey-toggle-button',
@@ -35,7 +33,7 @@ customElements.define('honey-toggle-button',
 
 
               // onClick auf Button definieren
-              this.button = this.shadowRoot.getElementById('button1');
+              this.button = this.shadowRoot.getElementById('toggleButton');
               this.button.innerHTML = this.content;
               this.button.addEventListener('click', () => {
                   this.toggle();
@@ -76,7 +74,7 @@ customElements.define('honey-toggle-button',
         // the second argument for setAttribute is mandatory, so we’ll use an empty string
         set toggled(val) {
             if (val) {
-                this.setAttribute('toggled', '');
+                this.setAttribute('toggled', true);
             }
             else {
                 this.removeAttribute('toggled');
@@ -87,7 +85,7 @@ customElements.define('honey-toggle-button',
            if( this.hasAttribute('toggled')){
                this.removeAttribute('toggled');
            }else{
-               this.setAttribute('toggled', '');
+               this.setAttribute('toggled', true);
            }
         }
     }
