@@ -1,11 +1,14 @@
 const template = document.createElement('template');
 template.innerHTML = `
      <style>
-          button {
+          button[toggled=true] {
              color: red;
           }
+          button[toggled=false] {
+                       color: red;
+          }
      </style>
-     <button id="toggleButton">loading...</button>
+     <button id="toggleButton" toggled="false">loading...</button>
 `;
 
 customElements.define('honey-toggle-button',
@@ -56,14 +59,11 @@ customElements.define('honey-toggle-button',
 
             console.log(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
 
-            if( name === 'toggled'){
-                if( newval != null){
-                    this.button.innerHTML = this.toggledContent;
-                }else{
-                    this.button.innerHTML = this.content;
-                }
-            }
-
+           if( this.toggled ){
+               this.button.innerHTML = this.toggledContent;
+           }else{
+               this.button.innerHTML = this.content;
+           }
         }
 
 
@@ -73,7 +73,7 @@ customElements.define('honey-toggle-button',
 
 
         get toggled() {
-            return this.hasAttribute('toggled');
+            return this.getAttribute('toggled')==='true';
         }
 
         // the second argument for setAttribute is mandatory, so we’ll use an empty string
@@ -82,15 +82,17 @@ customElements.define('honey-toggle-button',
                 this.setAttribute('toggled', true);
             }
             else {
-                this.removeAttribute('toggled');
+                this.setAttribute('toggled', false);
             }
         }
 
         toggle(){
-           if( this.hasAttribute('toggled')){
-               this.removeAttribute('toggled');
+           if( this.toggled ){
+               this.toggled = false;
+//               this.button.innerHTML = this.content;
            }else{
-               this.setAttribute('toggled', true);
+               this.toggled = true;
+//               this.button.innerHTML = this.toggledContent;
            }
         }
     }
