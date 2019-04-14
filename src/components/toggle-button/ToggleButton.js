@@ -1,5 +1,10 @@
 const template = document.createElement('template');
 template.innerHTML = `
+     <style>
+          button {
+             color: red;
+          }
+     </style>
      <button id="toggleButton">loading...</button>
 `;
 
