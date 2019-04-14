@@ -2,34 +2,19 @@
 
 <head>
 
-    <title>Web Component ToggleButton</title>
-<!--    <link href="../src/components/w3-include-html/w3.css" rel="stylesheet"/>-->
-<!--    <script src="../src/components/w3-include-html/w3data.js"></script>-->
-
+    <title>Honey Web Component ToggleButton</title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js">-->
     <script type="module" src="../src/components/toggle-button/ToggleButton.js"></script>
 </head>
 
+
 <body>
 
+<script>
+    const buttonOptions = JSON.stringify({id: 'button2', content: 'click here to toggle', toggledContent: 'has toggled'});
+</script>
 
-
-
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.14/webcomponents-hi.js">-->
-
-<!--</script>-->
-<!--<link rel="import" href="../src/components/toggle-button/ToggleButton.html">-->
-
-<!--<div w3-include-html="../src/components/toggle-button/ToggleButton.html"></div>-->
-<!--<div w3-include-html="../src/components/toggle-button/ToggleButton.css"></div>-->
-<!--<div w3-include-html="../src/components/toggle-button/ToggleButton.js"></div>-->
-
-<!--<script>-->
-<!--    w3IncludeHTML();-->
-<!--</script>-->
-
-<honey-toggle-button>
-    <p slot="content">don't click here to add a toggle</p>
+<honey-toggle-button options='{"content": "click here to toggle", "toggledContent": "has toggled"}'>leer
 </honey-toggle-button>
 
 </body>

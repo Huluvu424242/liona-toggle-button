@@ -11,10 +11,13 @@ customElements.define('honey-toggle-button',
 
         constructor() {
             super()
-            console.log('constructor');
+            const options = this.getAttribute('options');
+            console.log('constructor called with options: '+ JSON.stringify(options));
 
             // for init attribut defaults
             // e.g. this.src = '';
+
+
 
 
         }
@@ -26,9 +29,14 @@ customElements.define('honey-toggle-button',
               console.log('creating shadow dom');
               this.attachShadow({mode: 'open'});
               this.shadowRoot.appendChild(template.content.cloneNode(true));
+              const options = JSON.parse(this.getAttribute('options'));
+              this.content = options.content;
+              this.toggledContent = options.toggledContent;
+
 
               // onClick auf Button definieren
               this.button = this.shadowRoot.getElementById('button1');
+              this.button.innerHTML = this.content;
               this.button.addEventListener('click', () => {
                   this.toggle();
               });
@@ -41,40 +49,45 @@ customElements.define('honey-toggle-button',
         }
 
         attributeChangedCallback(name, oldval, newval) {
+            // do something every time the attribute changes
+
             console.log(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
 
-            // neuen Paragraph erzeugen und ans HTML Dokument anhängen
-            const para = document.createElement('p');
-            para.innerHTML='toogled';
-            document.body.appendChild(para);
-            // do something every time the attribute changes
+            if( name === 'toggled'){
+                if( newval != null){
+                    this.button.innerHTML = this.toggledContent;
+                }else{
+                    this.button.innerHTML = this.content;
+                }
+            }
+
         }
 
 
         static get observedAttributes() {
-            return ['expanded'];
-        }
+            return ['toggled'];
+          }
 
 
-        get expanded() {
-            return this.hasAttribute('expanded');
+        get toggled() {
+            return this.hasAttribute('toggled');
         }
 
         // the second argument for setAttribute is mandatory, so we’ll use an empty string
-        set expanded(val) {
+        set toggled(val) {
             if (val) {
-                this.setAttribute('expanded', '');
+                this.setAttribute('toggled', '');
             }
             else {
-                this.removeAttribute('expanded');
+                this.removeAttribute('toggled');
             }
         }
 
         toggle(){
-           if( this.hasAttribute('expanded')){
-               this.removeAttribute('expanded');
+           if( this.hasAttribute('toggled')){
+               this.removeAttribute('toggled');
            }else{
-               this.setAttribute('expanded', '');
+               this.setAttribute('toggled', '');
            }
         }
     }
