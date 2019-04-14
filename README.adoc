@@ -1,2 +1,38 @@
 = honey-toggle-button
 Beispiel für eine Webkomponente
+
+
+= Lessons learned
+
+* import spec ist deprecated
+  nicht mehr unterstützt von chrome: <link rel="import" href="xxx.html">
+  https://developer.mozilla.org/en-US/docs/Web/Web_Components/HTML_Imports
+* w3-html-include
+  lädt nur die html Seite aber nicht die darin referenzierten Styles und Skripte
+  https://www.w3schools.com/w3js/w3js_html_include.asp
+  https://www.quanzhanketang.com/howto/howto_html_include.html
+* im Constructor lässt sich der Shadow DOM noch modifizieren (weil er noch nicht existiert)
+* Wenn der Shadow DOM in einem Lifecycle Step angelegt wird, lässt er sich nach Verlassen des Steps nicht mehr
+  modifizieren, darum sollte man vorher prüfen ob der ShadowDOM bereits existiert
+* Eine Elementsuche über den ShadowDOM im Construktor liefert stets null weil die Elemente im DOM erst nach der
+  Ausführung des Konstruktors erreichbar sind - selbst wenn sie schon in den DOM eingehangen wurden.
+* Daher eignet sich der Konstruktur nur um Defaults für Attribute zu setzen.
+* Alles andere wie Hinzufügen von Eventhandlern und suchen von Elementen sollte im Connected Callback passieren.
+
+
+
+= Quellen im Neuland
+
+* https://dev.to/bennypowers/lets-build-web-components-part-3-vanilla-components-4on3
+* https://www.webcomponents.org/element/Juicy/imported-template
+* https://developer.mozilla.org/en-US/docs/Web/Web_Components
+* https://github.com/o-t-w/copypaste-webcomponent
+* https://coherent-labs.com/posts/web-components/
+* https://www.smashingmagazine.com/2018/07/reusable-components-custom-elements-shadow-dom-npm/
+* https://starcounter.io/html-partialsincludes-webcomponents-way/
+* https://www.codementor.io/ayushgupta/vanilla-js-web-components-chguq8goz
+* https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API
+* https://www.techlounge.io/node#episodes
+* https://github.com/mdn/web-components-examples/tree/master/element-details
+* https://dev.to/thepassle/web-components-from-zero-to-hero-4n4m
+*
