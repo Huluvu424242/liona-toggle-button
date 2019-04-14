@@ -1,10 +1,3 @@
-const template = document.createElement('template');
-template.innerHTML = `
-     <h2>hello world!</h2>
-     <slot name="content">some default content</slot>
-     <button id="button1">do not click</button>
-`;
-
 customElements.define('honey-toggle-button',
 
     class ToggleButton extends HTMLElement {
@@ -37,7 +30,7 @@ customElements.define('honey-toggle-button',
 
         disconnectedCallback() {
             console.log('element has been removed');
-            document.querySelector("honey-toggle-button").remove();
+//            document.querySelector("honey-toggle-button").remove();
         }
 
         attributeChangedCallback(name, oldval, newval) {
