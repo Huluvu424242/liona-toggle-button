@@ -4,7 +4,7 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "npx mocha --exit --timeout 5000 --recursive ./test/",
     "serve": "static-server"
   },
   "repository": {
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "devDependencies": {
-    "static-server": "*"
+    "static-server": "*",
+    "mocha": "*",
+    "showroom": "*"
   }
 }
