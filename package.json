@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx mocha --exit --timeout 5000 --recursive ./test/",
-    "report-coverage": "codecov",
+    "unittest": "nyc ./node_modules/npx/index.js ./node_modules/mocha/bin/mocha --exit --timeout 5000 --recursive ./test/",
     "serve": "static-server"
   },
   "repository": {
@@ -23,7 +23,17 @@
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "devDependencies": {
     "static-server": "*",
-    "mocha": "*",
-    "showroom": "*"
+    "mocha": "6.1.4",
+    "showroom": "0.9.3",
+    "nyc": "14.0.0",
+    "npx": "*",
+    "node": "11.14.0"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js",
+      "test/**/*.spec.js"
+    ]
   }
 }
