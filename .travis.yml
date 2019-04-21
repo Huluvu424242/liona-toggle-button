@@ -13,5 +13,4 @@ install:
   - npm install -g nyc
   - npm install -g mocha
 script:
-  - istanbul cover mocha --reporter lcovonly -- -R spec
-  - codecov
+  - nyc report --reporter=text-lcov > coverage.lcov && codecov
