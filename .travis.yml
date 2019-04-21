@@ -10,6 +10,8 @@ before_install:
 install:
   - npm install -g codecov
   - npm install -g istanbul
+  - npm install -g nyc
+  - npm install -g mocha
 script:
   - istanbul cover ./node_modules/mocha/bin/mocha --reporter lcovonly -- -R spec
   - codecov
