@@ -4,7 +4,7 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha --exit --timeout 5000 --recursive ./test/",
+    "test": "npm install --cache /tmp/empty-cache && npx mocha --exit --timeout 7000 --recursive ./test/",
     "serve": "static-server"
   },
   "repository": {
