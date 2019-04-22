@@ -7,11 +7,13 @@ before_install:
   # Launch XVFB
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-install:
   - npm install -g codecov
   - npm install -g jest
   - npm install -g mocha
-  - npm install jest-puppeteer puppeteer
-script:
-  - jest
-  - codecov
+#  - npm install jest-puppeteer puppeteer
+before_script:
+  - npm la
+
+#script:
+#  - jest
+#  - codecov
