@@ -23,6 +23,7 @@
   "devDependencies": {
     "static-server": "*",
     "mocha": "*",
-    "showroom": "*"
+    "showroom": "*",
+    "puppeteer": "1.14.0"
   }
 }
