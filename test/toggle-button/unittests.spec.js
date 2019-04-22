@@ -10,7 +10,8 @@ const timeout = 10000;
 describe('honey-toggle-button', () => {
 
     beforeAll(async () => {
-        await page.goto('https://google.de');
+        await page.setExtraHTTPHeaders({"accept-language": "en-US,en;q=0.9,en-UK;q=0.8,en;q=0.7"});
+        await page.goto('https://google.com');
     }, timeout);
 
     afterAll(async () => {
@@ -34,7 +35,7 @@ describe('honey-toggle-button', () => {
 
     test('should load without error', async () => {
       let text = await page.evaluate(() => document.querySelector("input[name='btnI']").getAttribute('aria-label'));
-      expect(text).toContain('Auf gut Glück!');
+      expect(text).toContain("I'm Feeling Lucky");
     })
 
     test('two plus two is four', () => {
