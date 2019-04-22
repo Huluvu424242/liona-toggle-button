@@ -19,6 +19,7 @@ module.exports = {
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: null,
@@ -38,6 +39,12 @@ module.exports = {
   //   "lcov",
   //   "clover"
   // ],
+  coverageReporters: [
+      "json",
+      "text",
+      "lcov",
+      "clover"
+  ],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
@@ -98,6 +105,7 @@ module.exports = {
 
   // Automatically reset mock state between every test
   // resetMocks: false,
+  resetMocks: true,
 
   // Reset the module registry before running each individual test
   // resetModules: false,
@@ -156,6 +164,7 @@ module.exports = {
 
   // This option allows use of a custom test runner
   // testRunner: "jasmine2",
+  //  testRunner: "mocha",
 
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
   // testURL: "http://localhost",
