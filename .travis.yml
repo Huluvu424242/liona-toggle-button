@@ -17,4 +17,5 @@ before_script:
   - node --version
   - npm --version
   - npx --version
-#  - npm la
+after_script:
+  - codecov
