@@ -5,7 +5,7 @@
 
 // browser,page,context und expect werden deklariert durch die jest-pupeteer umgebung
 
-const timeout = 300000;
+const timeout = 10000;
 
 describe('honey-toggle-button', () => {
 
@@ -13,21 +13,9 @@ describe('honey-toggle-button', () => {
         await page.goto('https://google.com');
     }, timeout);
 
-    beforeAll( async () => {
-        try{
-            console.log('### beforeAll ');
-         }catch(e){
-            console.log('### exception: '+e);
-         }
-    });
+    afterAll(async () => {
 
-    afterAll( async () => {
-        try{
-            console.log('### afterAll ');
-         }catch(e){
-            console.log('### exception: '+e);
-         }
-    })
+    });
 
 //    beforeEach( async ()=> {
 //        try{
@@ -40,9 +28,14 @@ describe('honey-toggle-button', () => {
 //        }
 //    })
 
-    test('should display "google" text on page', async () => {
+    it('should display "google" text on page', async () => {
         await expect(page).toMatch('Google-Suche');
     }, timeout);
+
+    test('should load without error', async () => {
+      let text = await page.evaluate(() => document.body.textContent)
+      expect(text).toContain('Google-Suche')
+    })
 
     test('two plus two is four', () => {
       expect(2 + 2).toBe(4);
