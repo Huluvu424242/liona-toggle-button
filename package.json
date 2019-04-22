@@ -4,7 +4,7 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
-    "test": "npm install --cache /tmp/empty-cache && jest",
+    "test": "npm install --cache /tmp/empty-cache && jest --detectOpenHandles",
     "unittest": "nyc ./node_modules/npx/index.js ./node_modules/mocha/bin/mocha --exit --timeout 5000 --recursive ./test/",
     "serve": "static-server"
   },
@@ -25,7 +25,6 @@
   "devDependencies": {
     "jest": "24.6",
     "jest-puppeteer": "^4.1.1",
-    "puppeteer": "1.14.0",
     "mocha": "6.1.4",
     "node": "10.15.3",
     "npx": "^10.2.0",
