@@ -3,17 +3,18 @@
 //const assert = require('assert')
 //const mocha = require('mocha')
 
-// page und expect werden deklariert durch die jest-pupeteer umgebung
+// browser,page,context und expect werden deklariert durch die jest-pupeteer umgebung
+
+const timeout = 30000;
 
 describe('honey-toggle-button', () => {
 
     beforeAll(async () => {
         await page.goto('https://google.com');
-    });
+    }, timeout);
 
     beforeAll( async () => {
         try{
-            jest.setTimeout(10000);
             console.log('### beforeAll ');
          }catch(e){
             console.log('### exception: '+e);
@@ -41,7 +42,7 @@ describe('honey-toggle-button', () => {
 
     it('should display "google" text on page', async () => {
         await expect(page).toMatch('Google-Suche')
-    });
+    }, timeout);
 
     test('two plus two is four', () => {
       expect(2 + 2).toBe(4);
@@ -65,4 +66,4 @@ describe('honey-toggle-button', () => {
 //
 //    })
 
-})
+}, timeout)
