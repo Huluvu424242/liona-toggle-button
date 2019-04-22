@@ -5,7 +5,7 @@
 
 // browser,page,context und expect werden deklariert durch die jest-pupeteer umgebung
 
-const timeout = 30000;
+const timeout = 300000;
 
 describe('honey-toggle-button', () => {
 
@@ -40,8 +40,8 @@ describe('honey-toggle-button', () => {
 //        }
 //    })
 
-    it('should display "google" text on page', async () => {
-        await expect(page).toMatch('Google-Suche')
+    test('should display "google" text on page', async () => {
+        await expect(page).toMatch('Google-Suche');
     }, timeout);
 
     test('two plus two is four', () => {
