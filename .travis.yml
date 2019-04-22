@@ -11,6 +11,7 @@ install:
   - npm install -g codecov
   - npm install -g jest
   - npm install -g mocha
+  - npm install jest-puppeteer puppeteer
 script:
   - jest
   - codecov
