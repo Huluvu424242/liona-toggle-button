@@ -17,4 +17,4 @@ before_script:
   - node --version
   - npm --version
   - npx --version
-  - npm la
+#  - npm la
