@@ -21,9 +21,11 @@
     "url": "https://github.com/FunThomas424242/honey-toggle-button/issues"
   },
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
+  "dependencies": {},
   "devDependencies": {
     "jest": "24.7.1",
     "jest-puppeteer": "4.1.1",
+    "puppeteer": "1.14.0",
     "mocha": "6.1.4",
     "node": "10.15.3",
     "npx": "10.2.0",
@@ -38,8 +40,5 @@
       "src/**/*.js",
       "test/**/*.spec.js"
     ]
-  },
-  "dependencies": {
-    "puppeteer": "^1.14.0"
   }
 }
