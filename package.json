@@ -30,5 +30,8 @@
     "node": "10.15.3",
     "npx": "^10.2.0",
     "showroom": "^0.9.3"
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
   }
 }
