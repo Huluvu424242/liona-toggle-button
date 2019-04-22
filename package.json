@@ -4,7 +4,7 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha --exit --timeout 5000 --recursive ./test/",
+    "test": "jest",
     "unittest": "nyc ./node_modules/npx/index.js ./node_modules/mocha/bin/mocha --exit --timeout 5000 --recursive ./test/",
     "serve": "static-server"
   },
@@ -22,18 +22,24 @@
   },
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "devDependencies": {
-    "static-server": "2.2.1",
+    "jest": "24.7.1",
+    "jest-puppeteer": "4.1.1",
     "mocha": "6.1.4",
-    "showroom": "0.9.3",
+    "node": "10.15.3",
+    "npx": "10.2.0",
     "nyc": "14.0.0",
-    "npx": "*",
-    "node": "10.15.3"
+    "showroom": "0.9.3",
+    "static-server": "2.2.1"
   },
   "nyc": {
     "all": true,
+    "cache": false,
     "include": [
       "src/**/*.js",
       "test/**/*.spec.js"
     ]
+  },
+  "dependencies": {
+    "puppeteer": "^1.14.0"
   }
 }

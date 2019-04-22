@@ -9,8 +9,8 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 install:
   - npm install -g codecov
-  - npm install -g nyc
+  - npm install -g jest
   - npm install -g mocha
 script:
-  - nyc report --reporter=text-lcov > coverage.lcov
+  - jest
   - codecov
