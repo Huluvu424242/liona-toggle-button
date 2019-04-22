@@ -10,17 +10,11 @@ before_install:
   - node --version
   - npm --version
   - npx --version
-install:
   - npm install -g codecov
   - npm install -g jest
   - npm install -g mocha
-  - npm install
 before_script:
   - node --version
   - npm --version
   - npx --version
   - npm la
-
-#script:
-#  - jest
-#  - codecov
