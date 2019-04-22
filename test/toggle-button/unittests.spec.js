@@ -28,13 +28,13 @@ describe('honey-toggle-button', () => {
 //        }
 //    })
 
-    it('should display "google" text on page', async () => {
-        await expect(page).toMatch('Google-Suche');
+    test('should display "google" text on page', async () => {
+        await expect(page).toMatch('Google Inc');
     }, timeout);
 
     test('should load without error', async () => {
-      let text = await page.evaluate(() => document.body.textContent)
-      expect(text).toContain('Google-Suche')
+      let text = await page.evaluate(() => document.querySelector("input[name='btnI']").getAttribute('aria-label'));
+      expect(text).toContain('Auf gut Glück!');
     })
 
     test('two plus two is four', () => {
