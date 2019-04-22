@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "devDependencies": {
-    "static-server": "*",
-    "mocha": "*",
-    "showroom": "*",
+    "static-server": "2.2.1",
+    "mocha": "6.1.4",
+    "showroom": "0.9.3",
     "puppeteer": "1.14.0"
   }
 }
