@@ -10,7 +10,7 @@ const timeout = 10000;
 describe('honey-toggle-button', () => {
 
     beforeAll(async () => {
-        await page.goto('https://google.com');
+        await page.goto('https://google.de');
     }, timeout);
 
     afterAll(async () => {
