@@ -9,7 +9,7 @@ import '../src/components/toggle-button/ToggleButton.js';
 
 describe('honey toggle-button input', () => {
   it('has by default an empty string as label', async () => {
-    const el = /** @type {A11yInput} */ (await fixture('<honey-toggle-button></honey-toggle-button>'));
-    expect(el.label).to.equal('');
+    const el = /** @type {A11yInput} */ (await fixture('<honey-toggle-button options="{\"content\": \"click here to toggle\", \"toggledContent\": \"click here to untoggle\"}">leer</honey-toggle-button>'));
+    expect(el).shadowDom.to.equal('<button id="toggleButton" toggled="false">loading...</button>');
   });
 });
