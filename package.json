@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start --coverage",
-    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
+    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage"
   },
   "repository": {
     "type": "git",
