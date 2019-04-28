@@ -29,4 +29,14 @@ describe('honey toggle-button input', () => {
     const el = /** @type {ToggleButton} */ await fixture(html `<honey-toggle-button .toggled=${true} options='{"content": "click here to toggle", "toggledContent": "click here to untoggle"}'>leer</honey-toggle-button>`);
     expect(el).shadowDom.to.equal('<button id="toggleButton" toggled="false">click here to untoggle</button>');
   });
+
+  it('button content toggled by click', async () => {
+    const el = /** @type {ToggleButton} */ await fixture(html `<honey-toggle-button options='{"content": "click here to toggle", "toggledContent": "click here to untoggle"}'>leer</honey-toggle-button>`);
+    expect(el).shadowDom.to.equal('<button id="toggleButton" toggled="false">click here to toggle</button>');
+    el.button.click();
+    expect(el).shadowDom.to.equal('<button id="toggleButton" toggled="false">click here to untoggle</button>');
+    el.button.click();
+    expect(el).shadowDom.to.equal('<button id="toggleButton" toggled="false">click here to toggle</button>');
+
+  });
 });
