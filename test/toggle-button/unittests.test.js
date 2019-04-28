@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../src/components/toggle-button/ToggleButton.js';
+import '../../src/components/toggle-button/ToggleButton.js';
 
 /**
  * @typedef {import('../src/a11y-input.js').A11yInput} A11yInput
