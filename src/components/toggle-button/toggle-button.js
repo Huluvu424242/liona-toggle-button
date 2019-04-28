@@ -19,6 +19,7 @@ customElements.define('honey-toggle-button',
 
     constructor() {
       super()
+      this.toggled = this.getAttribute('toggled') === "true" || false;
       const options = this.getAttribute('options');
       console.debug('constructor called with options: ' + JSON.stringify(options));
 
