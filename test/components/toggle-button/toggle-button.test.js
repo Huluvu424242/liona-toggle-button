@@ -1,11 +1,8 @@
-/* eslint-disable no-unused-expressions */
+'use strict';
+
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../../src/components/toggle-button/ToggleButton.js';
-
-/**
- * @typedef {import('../src/a11y-input.js').A11yInput} A11yInput
- */
+import '../../../src/components/toggle-button/toggle-button.js';
 
 describe('honey-toggle-button', () => {
 
