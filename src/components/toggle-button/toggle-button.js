@@ -20,7 +20,7 @@ customElements.define('honey-toggle-button',
     constructor() {
       super()
       const options = this.getAttribute('options');
-      console.log('constructor called with options: ' + JSON.stringify(options));
+      console.debug('constructor called with options: ' + JSON.stringify(options));
 
       // for init attribut defaults
       // e.g. this.src = '';
@@ -29,14 +29,14 @@ customElements.define('honey-toggle-button',
     }
 
     connectedCallback() {
-      console.log('custom element is on the page!');
+      console.debug('custom element is on the page!');
 
       this.erzeugeShadowDOMIfNotExists();
     }
 
     erzeugeShadowDOMIfNotExists() {
       if (!this.shadowRoot) {
-        console.log('creating shadow dom');
+        console.debug('creating shadow dom');
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         const options = JSON.parse(this.getAttribute('options'));
@@ -48,19 +48,19 @@ customElements.define('honey-toggle-button',
         this.button = this.shadowRoot.getElementById('toggleButton');
         this.button.innerHTML = this.content;
         this.button.addEventListener('click', () => {
-          this.toggle();
+          this.toggled = !this.toggled;
         });
       }
     }
 
     disconnectedCallback() {
-      console.log('element has been removed');
+      console.debug('element has been removed');
     }
 
     attributeChangedCallback(name, oldval, newval) {
       // do something every time the attribute changes
 
-      console.log(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
+      console.debug(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
 
       this.erzeugeShadowDOMIfNotExists();
 
@@ -90,13 +90,6 @@ customElements.define('honey-toggle-button',
       }
     }
 
-    toggle() {
-      if (this.toggled) {
-        this.toggled = false;
-      } else {
-        this.toggled = true;
-      }
-    }
   }
 );
 
