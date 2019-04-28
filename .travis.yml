@@ -11,8 +11,6 @@ before_install:
   - npm --version
   - npx --version
   - npm install -g codecov
-  - npm install -g jest
-  - npm install -g mocha
 before_script:
   - node --version
   - npm --version

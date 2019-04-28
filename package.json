@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start --coverage",
-    "jesttest": "jest --detectOpenHandles --forceExit",
-    "cleantest": "npm install --cache /tmp/empty-cache && jest --detectOpenHandles --forceExit",
-    "unittest": "nyc ./node_modules/npx/index.js ./node_modules/mocha/bin/mocha --exit --timeout 5000 --recursive ./test/",
-    "serve": "static-server"
+    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
   },
   "repository": {
     "type": "git",
