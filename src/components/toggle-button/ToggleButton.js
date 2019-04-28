@@ -31,25 +31,29 @@ customElements.define('honey-toggle-button',
         connectedCallback() {
             console.log('custom element is on the page!');
 
-            if (!this.shadowRoot) {
-              console.log('creating shadow dom');
-              this.attachShadow({mode: 'open'});
-              this.shadowRoot.appendChild(template.content.cloneNode(true));
-              const options = JSON.parse(this.getAttribute('options'));
-              this.content = options.content;
-              this.toggledContent = options.toggledContent;
-
-
-              // onClick auf Button definieren
-              this.button = this.shadowRoot.getElementById('toggleButton');
-              this.button.innerHTML = this.content;
-              this.button.addEventListener('click', () => {
-                  this.toggle();
-              });
-            }
+            this.erzeugeShadowDOMIfNotExists();
          }
 
-        disconnectedCallback() {
+      erzeugeShadowDOMIfNotExists() {
+        if (!this.shadowRoot) {
+          console.log('creating shadow dom');
+          this.attachShadow({mode: 'open'});
+          this.shadowRoot.appendChild(template.content.cloneNode(true));
+          const options = JSON.parse(this.getAttribute('options'));
+          this.content = options.content;
+          this.toggledContent = options.toggledContent;
+
+
+          // onClick auf Button definieren
+          this.button = this.shadowRoot.getElementById('toggleButton');
+          this.button.innerHTML = this.content;
+          this.button.addEventListener('click', () => {
+            this.toggle();
+          });
+        }
+      }
+
+      disconnectedCallback() {
             console.log('element has been removed');
 //            document.querySelector("honey-toggle-button").remove();
         }
@@ -58,6 +62,8 @@ customElements.define('honey-toggle-button',
             // do something every time the attribute changes
 
             console.log(`the ${name} attribute has changed from ${oldval} to ${newval}!!`);
+
+          this.erzeugeShadowDOMIfNotExists();
 
            if( this.toggled ){
                this.button.innerHTML = this.toggledContent;
