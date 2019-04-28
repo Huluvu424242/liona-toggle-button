@@ -51,7 +51,7 @@ customElements.define('honey-toggle-button',
 
         disconnectedCallback() {
             console.log('element has been removed');
-            document.querySelector("honey-toggle-button").remove();
+//            document.querySelector("honey-toggle-button").remove();
         }
 
         attributeChangedCallback(name, oldval, newval) {
