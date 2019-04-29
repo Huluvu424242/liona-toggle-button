@@ -55,3 +55,4 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://dev.to/thepassle/web-components-from-zero-to-hero-4n4m
 * https://dev.to/open-wc/testing-workflow-for-web-components-g73
 * https://open-wc.org/testing/#automating-tests
+* https://marmelab.com/blog/2018/02/22/accessibililty-testing-e2e.html
