@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start --coverage",
     "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
-    "e2e": "mocha --exit --timeout 5000 --recursive e2e/**/*.test.js"
+    "e2e": "mocha test/e2e/**/*.e2e.js"
   },
   "repository": {
     "type": "git",
