@@ -31,6 +31,8 @@
     "selenium-standalone": "^6.16.0",
     "selenium-webdriver": "3.6.0",
     "serve": "^11.0.0",
-    "serve-handler": "^6.0.0"
+    "serve-handler": "^6.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1"
   }
 }
