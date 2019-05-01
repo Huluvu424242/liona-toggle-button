@@ -6,6 +6,12 @@ Beispiel für eine Webkomponente
 
 == Benutzung
 
+=== Aktuelle Workarounds
+
+For dem npm run e2e bitte die selenium nodes als container starten
+sudo dockerd
+docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome
+
 .Chrome Linux Sandbox einrichten (alternative Methode nach: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox)
 [source, shell]
 ....

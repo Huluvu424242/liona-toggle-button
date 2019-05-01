@@ -23,9 +23,14 @@
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^6.1.4",
     "axe-webdriverjs": "^2.2.0",
+    "chromedriver": "^74.0.0",
+    "geckodriver": "1.16.2",
+    "http": "^0.0.0",
+    "mocha": "^6.1.4",
+    "selenium-standalone": "^6.16.0",
     "selenium-webdriver": "3.6.0",
-    "geckodriver": "1.16.2"
+    "serve": "^11.0.0",
+    "serve-handler": "^6.0.0"
   }
 }

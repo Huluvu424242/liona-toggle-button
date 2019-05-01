@@ -1,5 +1,6 @@
-var AxeBuilder = require('axe-webdriverjs');
-var WebDriver = require('selenium-webdriver');
+const AxeBuilder = require('axe-webdriverjs');
+const WebDriver = require('selenium-webdriver');
+const {getDriver} = require('./helpers');
 
 describe('honey-toggle-button', function() {
 
@@ -7,9 +8,7 @@ describe('honey-toggle-button', function() {
 
 
   before( async function( ) {
-    driver = new WebDriver.Builder()
-      .forBrowser('firefox')
-      .build();
+    driver = getDriver();
   });
 
   after( async function(  ) {
