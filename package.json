@@ -4,9 +4,9 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
-    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
     "test": "karma start --coverage",
-    "e2e": "mocha --timeout 20000 e2e/**/*.test.js"
+    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
+    "e2e": "mocha --exit --timeout 5000 --recursive e2e/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "dependencies": {},
   "devDependencies": {
+    "mocha": "^6.1.4",
     "axe-webdriverjs": "^2.2.0",
     "selenium-webdriver": "3.6.0",
+    "geckodriver": "1.16.2"
   }
 }
