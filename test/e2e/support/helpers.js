@@ -7,8 +7,9 @@ const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const firefox = require('selenium-webdriver/firefox');
 
-const handler = require('serve-handler');
 const http = require('http');
+const express = require('express');
+const path = require('path');
 
 
 // let seleniumInstance;
@@ -69,11 +70,12 @@ before(async () => {
   //   selenium.start((error, instance) => error ? reject(error) : resolve(instance));
   // });
 
-  server = http.createServer((request, response) => {
-    // You pass two more arguments for config and middleware
-    // More details here: https://github.com/zeit/serve-handler#options
-    return handler(request, response);
-  });
+  const webroot = path.join( __dirname, '../sites/' )
+
+  const app = express();
+  app.use('/', express.static(webroot));
+
+  server = http.createServer(app);
 
   server.listen(3000, () => {
     console.log('Running at http://localhost:3000');
