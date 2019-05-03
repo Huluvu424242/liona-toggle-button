@@ -4,6 +4,8 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
+    "startServer": "node test/e2e/support/startServer.js",
+    "stopServer": "node test/e2e/support/stopServer.js",
     "test": "karma start --coverage",
     "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
     "e2e": "mocha test/e2e/**/*.e2e.js",
