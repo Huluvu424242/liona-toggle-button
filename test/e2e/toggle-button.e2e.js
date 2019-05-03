@@ -1,5 +1,4 @@
 const AxeBuilder = require('axe-webdriverjs');
-const WebDriver = require('selenium-webdriver');
 const {getDriver} = require('./support/helpers');
 
 const chai = require("chai");
@@ -24,7 +23,7 @@ describe('honey-toggle-button', function () {
   beforeEach(done => done());
 
   function printReport(results) {
-    if(results.violations.length >0 ) {
+    if (results.violations.length > 0) {
       results.violations.forEach(function (violation) {
         const id = violation.id;
         const description = violation.description;
@@ -37,10 +36,11 @@ describe('honey-toggle-button', function () {
   it('Prüfe initiale Darstellung', done => {
     driver
       .get('http://localhost:3000/simple-component.html')
-      .then(() => AxeBuilder(driver).analyze().then((results) => {
-        printReport(results);
-        done();
-      })
+      .then(() => AxeBuilder(driver).analyze()
+        .then((results) => {
+          printReport(results);
+          done();
+        })
         .catch(done))
       .catch(done);
 
