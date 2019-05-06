@@ -36,7 +36,12 @@ describe('honey-toggle-button', function () {
   it('Prüfe initiale Darstellung', done => {
     driver
       .get('http://localhost:3000/simple-component.html')
-      .then(() => AxeBuilder(driver).analyze()
+      .then(() => AxeBuilder(driver)
+        // .include('body')
+        // .options({ checks: { 'valid-lang': { options: ['bobbert'] } } })
+        .withRules(['html-lang', 'image-alt'])
+        .withTags(['wcag2a', 'wcag2aa','wcag21aa','section508', 'best-practice'])
+        .analyze()
         .then((results) => {
           printReport(results);
           done();
