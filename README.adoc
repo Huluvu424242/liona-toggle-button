@@ -63,3 +63,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://open-wc.org/testing/#automating-tests
 * https://marmelab.com/blog/2018/02/22/accessibililty-testing-e2e.html
 * https://github.com/dequelabs/axe-webdriverjs
+* https://www.npmjs.com/package/wdio-webcomponents
+* https://github.com/Morlack/wdio-webcomponents/blob/master/test/wdio/specs/main.spec.js
+* https://robotninja.com/blog/introduction-using-selenium-docker-containers-end-end-testing/
+
