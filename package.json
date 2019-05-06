@@ -8,7 +8,7 @@
     "stopServer": "node test/e2e/support/stopServer.js",
     "test": "karma start --coverage",
     "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
-    "e2e": "mocha test/e2e/**/*.e2e.js",
+    "axe": "mocha test/e2e/**/*.axe.js",
     "pruefeVersionen": "npm-check -u"
   },
   "repository": {
