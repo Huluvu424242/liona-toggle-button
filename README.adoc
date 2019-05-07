@@ -66,4 +66,6 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://www.npmjs.com/package/wdio-webcomponents
 * https://github.com/Morlack/wdio-webcomponents/blob/master/test/wdio/specs/main.spec.js
 * https://robotninja.com/blog/introduction-using-selenium-docker-containers-end-end-testing/
+* https://rominirani.com/docker-tutorial-series-part-8-linking-containers-69a4e5bf50fb
+
 
