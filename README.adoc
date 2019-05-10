@@ -1,16 +1,19 @@
 image:https://travis-ci.org/FunThomas424242/honey-toggle-button.svg?branch=master["Build Status", link="https://travis-ci.org/FunThomas424242/honey-toggle-button"]
 image:https://codecov.io/gh/FunThomas424242/honey-toggle-button/branch/master/graph/badge.svg["codecov", link="https://codecov.io/gh/FunThomas424242/honey-toggle-button"]
 
-= honey-toggle-button
+== honey-toggle-button
 Beispiel für eine Webkomponente
 
-== Benutzung
+=== Benutzung
 
-=== Aktuelle Workarounds
+==== Aktuelle Workarounds
 
-For dem npm run e2e bitte die selenium nodes als container starten
+Vor dem npm run e2e bitte die selenium nodes als container starten
+[source,shell]
+----
 sudo dockerd
 docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome
+----
 
 .Chrome Linux Sandbox einrichten (alternative Methode nach: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox)
 [source, shell]
@@ -27,7 +30,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 
 
-= Lessons learned
+== Lessons learned
 
 * import spec ist deprecated
   nicht mehr unterstützt von chrome: <link rel="import" href="xxx.html">
@@ -45,7 +48,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * Alles andere wie Hinzufügen von Eventhandlern und suchen von Elementen sollte im Connected Callback passieren.
 
 
-= Quellen im Neuland
+== Quellen im Neuland
 
 * https://dev.to/bennypowers/lets-build-web-components-part-3-vanilla-components-4on3
 * https://www.webcomponents.org/element/Juicy/imported-template
