@@ -7,20 +7,42 @@ chai.use(chaiAsPromised);
 const expect = chai.expect;
 const assert = chai.assert;
 
+var dockerCLI = require('docker-cli-js');
+var DockerOptions = dockerCLI.Options;
+var Docker = dockerCLI.Docker;
+
 
 describe('honey-toggle-button', function () {
 
   let driver;
 
-
   before(done => {
-    driver = getDriver();
-    done();
+    // const docker = new Docker({socketPath: '/var/run/docker.sock'});
+    const docker = new Docker();
+    docker.command('run -e ACTION=start -i -v /var/run/docker.sock:/var/run/docker.sock funthomas424242/liona.docker')
+      .then(function (data) {
+        console.log('data = ', data);
+      })
+      .then( function(value){
+        driver = getDriver();
+      })
+      .then( function(retValue){
+        done();
+      })
+      .catch(done);
   });
 
-  after(done => done());
+  after(done => {
+    // const docker = new Docker({socketPath: '/var/run/docker.sock'});
+    const docker = new Docker();
+    docker.command('run -e ACTION=stop -i -v /var/run/docker.sock:/var/run/docker.sock funthomas424242/liona.docker')
+      .then(function (data) {
+        console.log('data = ', data);
+        done();
+      }).catch(done);
+  });
 
-  beforeEach(done => done());
+  // beforeEach(done => done());
 
   function printReport(results) {
     if (results.violations.length > 0) {
@@ -37,10 +59,10 @@ describe('honey-toggle-button', function () {
     driver
       .get('http://localhost:3000/simple-component.html')
       .then(() => AxeBuilder(driver)
-        // .include('body')
-        // .options({ checks: { 'valid-lang': { options: ['bobbert'] } } })
+      // .include('body')
+      // .options({ checks: { 'valid-lang': { options: ['bobbert'] } } })
         .withRules(['html-lang', 'image-alt'])
-        .withTags(['wcag2a', 'wcag2aa','wcag21aa','section508', 'best-practice'])
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'section508', 'best-practice'])
         .analyze()
         .then((results) => {
           printReport(results);

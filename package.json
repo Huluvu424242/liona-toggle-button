@@ -40,6 +40,7 @@
     "@open-wc/testing": "0.11.4",
     "@open-wc/testing-karma": "1.1.1",
     "webpack-merge": "4.2.1",
-    "lit-html": "1.0.0"
+    "lit-html": "1.0.0",
+    "docker-cli-js": "2.5.2"
   }
 }
