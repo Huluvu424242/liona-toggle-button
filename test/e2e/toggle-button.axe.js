@@ -16,33 +16,43 @@ describe('honey-toggle-button', function () {
 
   let driver;
 
-  before(done => {
-    // const docker = new Docker({socketPath: '/var/run/docker.sock'});
+  // before(done => {
+  //   // const docker = new Docker({socketPath: '/var/run/docker.sock'});
+  //   const docker = new Docker();
+  //   docker.command('run --rm -p 4444:5555  -e "ACTION=start" -i -v /var/run/docker.sock:/var/run/docker.sock funthomas424242/liona.docker')
+  //     .then(function (data) {
+  //       console.log('data = ', data);
+  //     })
+  //     .then(function (value) {
+  //       driver = getDriver();
+  //     })
+  //     .then(function (retValue) {
+  //       done();
+  //     })
+  //     .catch(done);
+  // });
+
+  before( done =>{
+    driver = getDriver();
+    done();
+  });
+
+  // after(done => {
+  //   // const docker = new Docker({socketPath: '/var/run/docker.sock'});
+  //   const docker = new Docker();
+  //   docker.command('run -e "ACTION=stop" -i -v /var/run/docker.sock:/var/run/docker.sock funthomas424242/liona.docker')
+  //     .then(function (data) {
+  //       console.log('data = ', data);
+  //       done();
+  //     }).catch(done);
+  // });
+
+  beforeEach(done => {
     const docker = new Docker();
-    docker.command('run -e ACTION=start -i -v /var/run/docker.sock:/var/run/docker.sock funthomas424242/liona.docker')
-      .then(function (data) {
-        console.log('data = ', data);
-      })
-      .then( function(value){
-        driver = getDriver();
-      })
-      .then( function(retValue){
-        done();
-      })
+    docker.command('ps')
+      .then(() => done())
       .catch(done);
   });
-
-  after(done => {
-    // const docker = new Docker({socketPath: '/var/run/docker.sock'});
-    const docker = new Docker();
-    docker.command('run -e ACTION=stop -i -v /var/run/docker.sock:/var/run/docker.sock funthomas424242/liona.docker')
-      .then(function (data) {
-        console.log('data = ', data);
-        done();
-      }).catch(done);
-  });
-
-  // beforeEach(done => done());
 
   function printReport(results) {
     if (results.violations.length > 0) {
