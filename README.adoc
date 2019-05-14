@@ -47,6 +47,19 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * Daher eignet sich der Konstruktur nur um Defaults für Attribute zu setzen.
 * Alles andere wie Hinzufügen von Eventhandlern und suchen von Elementen sollte im Connected Callback passieren.
 
+== NPM Module
+
+* https://www.npmjs.com/package/accessibility Hinzufügen von Text2Speech Features etc.
+
+* https://www.npmjs.com/package/nav-ally ACC Test mit Klicks
+  https://github.com/dervism/carparkjs/blob/master/package.json (Beispiel)
+* https://www.npmjs.com/package/lighthouse-automatic Automatischer Test verschiedener URLs
+* https://www.npmjs.com/package/axe-core ACC Tests statisch -> nach jedem Klick aufrufen
+* https://www.npmjs.com/package/axe-webdriverjs Aufsatz auf Axe Core
+* https://www.npmjs.com/package/lighthouse auch programmatisch nutzbar
+  https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/readme.md#using-programmatically
+
+* https://www.npmjs.com/package/accessibility-html-reporter -> statische Analyse von HTML Dateien
 
 == Quellen im Neuland
 

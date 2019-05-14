@@ -11,6 +11,8 @@ var dockerCLI = require('docker-cli-js');
 var DockerOptions = dockerCLI.Options;
 var Docker = dockerCLI.Docker;
 
+const accessibilityHtmlReporter = require('accessibility-html-reporter');
+
 
 describe('honey-toggle-button', function () {
 
@@ -64,6 +66,10 @@ describe('honey-toggle-button', function () {
     }
     assert.lengthOf(results.violations, 0);
   }
+
+  it( 'Report erstellen', done =>{
+    accessibilityHtmlReporter({srcFiles: ['test/**/*.html']}, done);
+  });
 
   it('Prüfe initiale Darstellung', done => {
     driver
