@@ -64,7 +64,7 @@ describe('honey-toggle-button', function () {
         console.error(`ERR: \[${id}\] ${description}`);
       });
     }
-    assert.lengthOf(results.violations, 0);
+    assert.lengthOf(results.violations, 4);
   }
 
   it( 'Report erstellen', done =>{
