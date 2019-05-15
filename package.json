@@ -4,8 +4,12 @@
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
   "scripts": {
+    "startServer": "node test/e2e/support/startServer.js",
+    "stopServer": "node test/e2e/support/stopServer.js",
     "test": "karma start --coverage",
-    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage"
+    "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
+    "axe": "mocha test/e2e/**/*.axe.js",
+    "pruefeVersionen": "npm-check -u"
   },
   "repository": {
     "type": "git",
@@ -22,13 +26,22 @@
   "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "6.1.4",
-    "node": "10.15.3",
-    "npx": "^10.2.0",
+    "npm-check": "^5.9.0",
+    "axe-webdriverjs": "^2.2.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chromedriver": "^74.0.0",
+    "geckodriver": "1.16.2",
+    "express": "^4.16.4",
+    "mocha": "^6.1.4",
+    "selenium-standalone": "^6.16.0",
+    "selenium-webdriver": "3.6.0",
+    "karma": "4.1.0",
     "@open-wc/testing": "0.11.4",
     "@open-wc/testing-karma": "1.1.1",
     "webpack-merge": "4.2.1",
     "lit-html": "1.0.0",
-    "karma": "4.1.0"
+    "docker-cli-js": "2.5.2",
+    "accessibility-html-reporter": "1.0.1"
   }
 }

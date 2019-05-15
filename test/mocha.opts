@@ -1,0 +1,5 @@
+--async-only
+--bail
+--recursive
+--timeout 500000
+--exit

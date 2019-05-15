@@ -1,10 +1,19 @@
 image:https://travis-ci.org/FunThomas424242/honey-toggle-button.svg?branch=master["Build Status", link="https://travis-ci.org/FunThomas424242/honey-toggle-button"]
 image:https://codecov.io/gh/FunThomas424242/honey-toggle-button/branch/master/graph/badge.svg["codecov", link="https://codecov.io/gh/FunThomas424242/honey-toggle-button"]
 
-= honey-toggle-button
+== honey-toggle-button
 Beispiel für eine Webkomponente
 
-== Benutzung
+=== Benutzung
+
+==== Aktuelle Workarounds
+
+Vor dem npm run e2e bitte die selenium nodes als container starten
+[source,shell]
+----
+sudo dockerd
+docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome
+----
 
 .Chrome Linux Sandbox einrichten (alternative Methode nach: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#setting-up-chrome-linux-sandbox)
 [source, shell]
@@ -21,7 +30,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
 
 
-= Lessons learned
+== Lessons learned
 
 * import spec ist deprecated
   nicht mehr unterstützt von chrome: <link rel="import" href="xxx.html">
@@ -38,8 +47,21 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * Daher eignet sich der Konstruktur nur um Defaults für Attribute zu setzen.
 * Alles andere wie Hinzufügen von Eventhandlern und suchen von Elementen sollte im Connected Callback passieren.
 
+== NPM Module
 
-= Quellen im Neuland
+* https://www.npmjs.com/package/accessibility Hinzufügen von Text2Speech Features etc.
+
+* https://www.npmjs.com/package/nav-ally ACC Test mit Klicks
+  https://github.com/dervism/carparkjs/blob/master/package.json (Beispiel)
+* https://www.npmjs.com/package/lighthouse-automatic Automatischer Test verschiedener URLs
+* https://www.npmjs.com/package/axe-core ACC Tests statisch -> nach jedem Klick aufrufen
+* https://www.npmjs.com/package/axe-webdriverjs Aufsatz auf Axe Core
+* https://www.npmjs.com/package/lighthouse auch programmatisch nutzbar
+  https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/readme.md#using-programmatically
+* https://www.npmjs.com/package/@nutmeg/cli
+* https://www.npmjs.com/package/accessibility-html-reporter -> statische Analyse von HTML Dateien
+
+== Quellen im Neuland
 
 * https://dev.to/bennypowers/lets-build-web-components-part-3-vanilla-components-4on3
 * https://www.webcomponents.org/element/Juicy/imported-template
@@ -55,3 +77,14 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://dev.to/thepassle/web-components-from-zero-to-hero-4n4m
 * https://dev.to/open-wc/testing-workflow-for-web-components-g73
 * https://open-wc.org/testing/#automating-tests
+* https://marmelab.com/blog/2018/02/22/accessibililty-testing-e2e.html
+* https://github.com/dequelabs/axe-webdriverjs
+* https://www.npmjs.com/package/wdio-webcomponents
+* https://github.com/Morlack/wdio-webcomponents/blob/master/test/wdio/specs/main.spec.js
+* https://robotninja.com/blog/introduction-using-selenium-docker-containers-end-end-testing/
+* https://rominirani.com/docker-tutorial-series-part-8-linking-containers-69a4e5bf50fb
+* https://docs.travis-ci.com/user/docker/
+* https://jaxenter.de/einfuehrung-docker-tutorial-container-61528
+
+
+

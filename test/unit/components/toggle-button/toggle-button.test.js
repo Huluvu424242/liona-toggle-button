@@ -2,7 +2,7 @@
 
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../../../src/components/toggle-button/toggle-button.js';
+import '../../../../src/components/toggle-button/toggle-button.js';
 
 describe('honey-toggle-button', () => {
 
