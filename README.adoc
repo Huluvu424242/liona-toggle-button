@@ -58,7 +58,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://www.npmjs.com/package/axe-webdriverjs Aufsatz auf Axe Core
 * https://www.npmjs.com/package/lighthouse auch programmatisch nutzbar
   https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/readme.md#using-programmatically
-
+* https://www.npmjs.com/package/@nutmeg/cli
 * https://www.npmjs.com/package/accessibility-html-reporter -> statische Analyse von HTML Dateien
 
 == Quellen im Neuland
