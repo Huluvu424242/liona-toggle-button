@@ -52,6 +52,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://www.npmjs.com/package/accessibility Hinzufügen von Text2Speech Features etc.
 
 * https://www.npmjs.com/package/nav-ally ACC Test mit Klicks
+  https://github.com/navikt/nav-ally/blob/master/documentation.md#test_execution_and_assertation
   https://github.com/dervism/carparkjs/blob/master/package.json (Beispiel)
 * https://www.npmjs.com/package/lighthouse-automatic Automatischer Test verschiedener URLs
 * https://www.npmjs.com/package/axe-core ACC Tests statisch -> nach jedem Klick aufrufen
