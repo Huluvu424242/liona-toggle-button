@@ -10,7 +10,7 @@
     "cleantest": "npm install --cache /tmp/empty-cache && karma start --coverage",
     "axe": "mocha test/e2e/**/*.axe.js",
     "pruefeVersionen": "npm-check -u",
-    "wcag-test":"npx nav-ally -f wcag.yml",
+    "wcag-test": "nav-ally -r yes -f wcag.yml",
     "ally-test": "start-server-and-test startServer http://localhost:3000 wcag-test"
   },
   "repository": {
