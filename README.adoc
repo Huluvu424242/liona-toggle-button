@@ -85,6 +85,7 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 * https://rominirani.com/docker-tutorial-series-part-8-linking-containers-69a4e5bf50fb
 * https://docs.travis-ci.com/user/docker/
 * https://jaxenter.de/einfuehrung-docker-tutorial-container-61528
+* https://blogs.itemis.com/de/jenkins-mit-docker-virtualisieren-oder-doch-nicht
 
 
 
