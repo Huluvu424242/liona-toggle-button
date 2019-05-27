@@ -1,0 +1,38 @@
+https://support.cloudbees.com/hc/en-us/articles/360000304932-Pipeline-jobs-fail-to-run-in-a-Docker-in-Docker-step?mobile_site=true
+
+Issue
+When we run a Docker in Docker step we obtain a similar error to the following message
+[NAME] Running shell script 
+sh: can't create /jenkins/workspace/JOB_NAME/NAME@tmp/durable-12345678/pid: nonexistent directory 
+sh: can't create /jenkins/workspace/AOWP_DEMO_PLATFORM/NAME@tmp/durable-12345678/jenkins-log.txt: nonexistent directory 
+sh: can't create /jenkins/workspace/AOWP_DEMO_PLATFORM/NAME@tmp/durable-12345678/jenkins-result.txt: nonexistent directory 
+[Pipeline] } 
+$ docker stop 123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234 
+$ docker rm -f 123456789abcdef123456789abcdef123456789abcdef123456789abcdef1234 
+[Pipeline] // withDockerContainer 
+[Pipeline] } 
+[Pipeline] // node 
+[Pipeline] End of Pipeline 
+ERROR: script returned exit code -2
+
+
+Resolution
+If your Pipeline script is something like this one and it uses withDockerContainer
+
+node('docker') {
+  stage 'Python Build'
+
+  withDockerContainer('python') { 
+    sh 'python --version' 
+  } 
+}
+What happens is that the agent is running itself in a docker container so when it tries to share the workspace with the started container in withDockerContainer it is trying to share a directory that only exist in the container, not in the host. The new container is a sibling to the agent with a container-container relationship instead of host-container
+
+One way to make it work is to have the agent workspace shared from the host, in your case using /jenkins/workspace as a volume in the agent so the data written by the agent is actually written in the host and then can be shared to the new container. You can also change the workspace location in the agent definition to something else than the default jenkins
+
+Something you need to consider is that by sharing the workspace new agent will have access to the previous state (for better or worse) and that the host may get clutter from the builds. As a result, it is recommendable to limit the sharing between the host and agent as much as possible and to ensure some cleaning happens.
+
+References
+Running build steps inside containers
+https://go.cloudbees.com/docs/cloudbees-documentation/cje-user-guide/#docker-workflow-sect-inside
+
