@@ -1,5 +1,5 @@
 {
-  "name": "honey-toggle-button",
+  "name": "liona-toggle-button",
   "version": "1.0.0",
   "description": "Beispiel einer Webkomponente",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FunThomas424242/honey-toggle-button.git"
+    "url": "git+https://github.com/FunThomas424242/liona-toggle-button.git"
   },
   "keywords": [
     "webcomponent"
@@ -21,9 +21,9 @@
   "author": "FunThomas424242 (Thomas Schubert)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FunThomas424242/honey-toggle-button/issues"
+    "url": "https://github.com/FunThomas424242/liona-toggle-button/issues"
   },
-  "homepage": "https://github.com/FunThomas424242/honey-toggle-button#readme",
+  "homepage": "https://github.com/FunThomas424242/liona-toggle-button#readme",
   "dependencies": {},
   "devDependencies": {
     "npm-check": "^5.9.0",

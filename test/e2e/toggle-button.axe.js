@@ -8,7 +8,7 @@ const expect = chai.expect;
 const assert = chai.assert;
 
 
-describe('honey-toggle-button', function () {
+describe('liona-toggle-button', function () {
 
   let driver;
 

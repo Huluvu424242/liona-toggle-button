@@ -13,7 +13,7 @@ template.innerHTML = `
      <button id="toggleButton" toggled="false">loading...</button>
 `;
 
-customElements.define('honey-toggle-button',
+customElements.define('liona-toggle-button',
 
   class ToggleButton extends HTMLElement {
 

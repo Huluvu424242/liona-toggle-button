@@ -1,7 +1,7 @@
-image:https://travis-ci.org/FunThomas424242/honey-toggle-button.svg?branch=master["Build Status", link="https://travis-ci.org/FunThomas424242/honey-toggle-button"]
-image:https://codecov.io/gh/FunThomas424242/honey-toggle-button/branch/master/graph/badge.svg["codecov", link="https://codecov.io/gh/FunThomas424242/honey-toggle-button"]
+image:https://travis-ci.org/FunThomas424242/liona-toggle-button.svg?branch=master["Build Status", link="https://travis-ci.org/FunThomas424242/liona-toggle-button"]
+image:https://codecov.io/gh/FunThomas424242/liona-toggle-button/branch/master/graph/badge.svg["codecov", link="https://codecov.io/gh/FunThomas424242/liona-toggle-button"]
 
-== honey-toggle-button
+== liona-toggle-button
 Beispiel für eine Webkomponente
 
 === Benutzung
