@@ -94,7 +94,6 @@ customElements.define('liona-toggle-button',
   }
 );
 
-//    export default ToggleButton;
 
 
 
