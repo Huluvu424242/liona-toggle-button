@@ -35,7 +35,7 @@ describe('honey-toggle-button', function () {
         console.error(`ERR: \[${id}\] ${description}`);
       });
     }
-    assert.lengthOf(results.violations, 4);
+    assert.lengthOf(results.violations, 0);
   }
 
 
@@ -54,8 +54,6 @@ describe('honey-toggle-button', function () {
         })
         .catch(done))
       .catch(done);
-
-    // assert.equal( text, 'loading...');
   });
 
 
