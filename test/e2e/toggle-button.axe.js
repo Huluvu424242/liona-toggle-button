@@ -13,21 +13,13 @@ describe('liona-toggle-button', function () {
   let driver;
 
 
-
-  before( done =>{
+  before(done => {
     driver = getDriver();
     done();
   });
 
 
-  // beforeEach(done => {
-  //   const docker = new Docker();
-  //   docker.command('ps')
-  //     .then(() => done())
-  //     .catch(done);
-  // });
-
-  function printReport(results) {
+  function printReport(results, expectedErrors) {
     if (results.violations.length > 0) {
       results.violations.forEach(function (violation) {
         const id = violation.id;
@@ -35,21 +27,36 @@ describe('liona-toggle-button', function () {
         console.error(`ERR: \[${id}\] ${description}`);
       });
     }
-    assert.lengthOf(results.violations, 0);
+    assert.lengthOf(results.violations, expectedErrors);
   }
 
 
   it('Prüfe initiale Darstellung', done => {
     driver
-      .get('http://localhost:3000/simple-component.html')
+      .get('http://localhost:3000/index.html')
       .then(() => AxeBuilder(driver)
       // .include('body')
-      // .options({ checks: { 'valid-lang': { options: ['bobbert'] } } })
-        .withRules(['html-lang', 'image-alt'])
+      // .options({ checks: { 'valid-lang': { enabled: true} } })
+        .withRules(['valid-lang', 'html-lang', 'image-alt'])
         .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'section508', 'best-practice'])
         .analyze()
         .then((results) => {
-          printReport(results);
+          printReport(results, 0);
+          done();
+        })
+        .catch(done))
+      .catch(done);
+  });
+
+  it('Prüfe invalide initiale Darstellung', done => {
+    driver
+      .get('http://localhost:3000/index-invalid.html')
+      .then(() => AxeBuilder(driver)
+        .withRules(['valid-lang', 'html-lang', 'image-alt'])
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'section508', 'best-practice'])
+        .analyze()
+        .then((results) => {
+          printReport(results, 4);
           done();
         })
         .catch(done))
