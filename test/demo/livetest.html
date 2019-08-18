@@ -1,22 +1,24 @@
-<html>
+<html lang="de">
 <head>
-
+  <title>Testseite für Toggle Button</title>
+  <meta charset="utf-8">
+  <meta name="viewport">
   <script type="module">
-    import '../../src/components/toggle-button/toggle-button.js';
+      import '../../src/components/toggle-button/toggle-button.js';
   </script>
 
 
 </head>
 <body>
 
-
-Vorher
-<liona-toggle-button options='{"content": "blah", "toggledContent": "blup"}'>
-  <p slot="content">click here to add a toggle</p>
-  Das ist mein Text
-</liona-toggle-button>
-Nachher
-
+<main id="content" role="main">
+  Vorher
+  <liona-toggle-button options='{"content": "blah", "toggledContent": "blup"}'>
+    <p slot="content">click here to add a toggle</p>
+    Das ist mein Text
+  </liona-toggle-button>
+  Nachher
+</main>
 </body>
 </html>
 
